@@ -1,4 +1,4 @@
-import DataSheetBase from './DataSheetBase.js';
+/*import DataSheetBase from './DataSheetBase.js';
 
 export default class DataSheet_reviews extends DataSheetBase {
 
@@ -95,3 +95,5 @@ export default class DataSheet_reviews extends DataSheetBase {
   
 
 }
+
+*/

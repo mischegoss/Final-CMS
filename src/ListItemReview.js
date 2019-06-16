@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import './App.css';
 import Rating from 'react-rating';
 import ProfilePicName from './ProfilePicName';
@@ -105,3 +105,4 @@ export default class ListItemReview extends Component {
   
 
 }
+*/

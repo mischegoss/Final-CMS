@@ -8,7 +8,7 @@ import DataSheet_sheet2 from './DataSheet_sheet2.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_pickerNumberOfRows from './DataSheet_pickerNumberOfRows.js';
 import firebase from 'firebase';
-import firestore from 'firebase/firestore';
+
 
 
 export default class App extends Component {
@@ -204,7 +204,7 @@ export default class App extends Component {
       this.locStrings = new LocalizedStrings({en: {}});
     }
     this.locStrings.setLanguage(this.dataSlots['ds_activeLang']);
-  }
+  } 
 
   loadData_firebase1 = (dataSheet, options, firstLoad) => {
     // This method was written by data plugin 'Firebase (Cloud Firestore)'.

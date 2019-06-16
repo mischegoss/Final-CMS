@@ -3,7 +3,7 @@ import './App.css';
 import img_elN00021restaurant from './images/LoginMainScreen_elN00021restaurant_883381.jpg';
 import FirebaseLogin from './FirebaseLogin';
 import firebase from 'firebase';
-import firestore from 'firebase/firestore';
+
 
 
 export default class LoginMainScreen extends Component {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import './App.css';
 import Dashboard from './Dashboard';
 import ReviewsComp from './ReviewsComp';
@@ -79,3 +79,4 @@ export default class LitsDetailsScreen extends Component {
   
 
 }
+*/
