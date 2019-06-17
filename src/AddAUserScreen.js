@@ -73,7 +73,7 @@ export default class AddAUserScreen extends Component {
   
   
   sendData_sendButton_to_sheet2 = () => {
-    const dataSheet = this.props.appActions.getDataSheet('sheet2');
+    //const dataSheet = this.props.appActions.getDataSheet('sheet2');
   
     let row = this.props.dataSheetRow || {
     };

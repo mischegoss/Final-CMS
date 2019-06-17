@@ -15,11 +15,9 @@ export default class Friends_Item extends Component {
   
   }
   
-  
-  onClick_elButtonReviews = (ev) => {
-    let newVal = this.props.dataSheetRow.key;
-    this.props.appActions.updateDataSlot('ds_selectedRestaurantId', newVal);
-  
+  onClick_elList = (ev) => {
+    // Remove row from connected sheet
+    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
   
   }
   
@@ -97,7 +95,7 @@ export default class Friends_Item extends Component {
           </div>
           
           <div className='elButtonReviews' style={style_elButtonReviews_outer}>
-            <Button className='actionFont' style={style_elButtonReviews}  color="accent" onClick={this.onClick_elButtonReviews} >
+            <Button className='actionFont' style={style_elButtonReviews}  color="accent" onClick={this. onClick_elList} >
               {this.props.locStrings.restaurantitem_button_813725}
             </Button>
           

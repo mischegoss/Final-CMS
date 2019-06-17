@@ -50,7 +50,7 @@ export default class UserInfo extends Component {
     this.props.appActions.updateDataSlot('ds_SlotUserPhoto', "");
     this.props.appActions.updateDataSlot('ds_SlotUserID', "");
     this.props.appActions.updateDataSlot('ds_SlotUserName', "");
-    this.props.appActions.updateDataSlot('ds_selectedRestaurantId', "");
+    //this.props.appActions.updateDataSlot('ds_selectedRestaurantId', "");
     this.props.appActions.updateDataSlot('ds_SlotUserEmail', "");
   
     // Go to screen 'LoginMain'

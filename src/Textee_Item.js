@@ -11,12 +11,10 @@ export default class Textee_Item extends Component {
   // Properties used by this component:
   // dataSheetRow, img_Name, img_Number, img_URL
 
-  onClick_elButtonReviews = (ev) => {
-    let newVal = this.props.dataSheetRow.key;
-    this.props.appActions.updateDataSlot('ds_selectedRestaurantId', newVal);
-  
-    // Go to screen 'RestaurantDetails'
-    this.props.appActions.goToScreen('restaurantdetails', { ...this.props, transitionId: 'fadeIn' });
+ 
+  onClick_elList = (ev) => {
+    // Remove row from connected sheet
+    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
   
   }
   
@@ -25,7 +23,7 @@ export default class Textee_Item extends Component {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
-    let layoutFlowStyle = {};
+    //let layoutFlowStyle = {};
     
     const style_elBackgroundShape = {
         background: 'rgba(255, 255, 255, 1.000)',
@@ -41,7 +39,7 @@ export default class Textee_Item extends Component {
         color: 'rgba(0, 0, 0, 0.8500)',
         textAlign: 'left',
      };
-    const value_restaurantName = this.props.img_Name;
+    const value_userName = this.props.img_Name;
     
     const style_elAddressCopy = {
         fontSize: 19.4,
@@ -76,7 +74,7 @@ export default class Textee_Item extends Component {
           
           <div className='font-avenirNextRegular  elRestaurantName'>
             <div style={style_elRestaurantName}>
-              <div>{value_restaurantName !== undefined ? value_restaurantName : (<span className="propValueMissing">{this.props.locStrings.restaurantitem_textblockcopy2_495180}</span>)}</div>
+              <div>{value_userName !== undefined ? value_userName : (<span className="propValueMissing">{this.props.locStrings.restaurantitem_textblockcopy2_495180}</span>)}</div>
             </div>
           
           </div>
@@ -89,7 +87,7 @@ export default class Textee_Item extends Component {
           </div>
           
           <div className='actionFont elButtonReviews' style={style_elButtonReviews_outer}>
-            <Button style={style_elButtonReviews}  color="accent" onClick={this.onClick_elButtonReviews} >
+            <Button style={style_elButtonReviews}  color="accent" onClick={this.onClick_elList} >
               {this.props.locStrings.restaurantitem_button_813725}
             </Button>
           
