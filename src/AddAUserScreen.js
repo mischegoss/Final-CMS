@@ -35,7 +35,8 @@ export default class AddAUserScreen extends Component {
   
   onClick_elSendButton = (ev) => {
     this.sendData_sendButton_to_sheet2();
-  
+    this.props.appActions.goBack();
+    
   
   }
   
@@ -54,7 +55,8 @@ export default class AddAUserScreen extends Component {
   
   onClick_elButton = (ev) => {
     this.sendData_button_to_sheet2();
-  
+    this.props.appActions.goBack();
+    
   }
   
   
@@ -251,7 +253,7 @@ export default class AddAUserScreen extends Component {
           
           <div className='elButton' style={style_elButton_outer}>
             <Button className='actionFont' style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
-              ADD USER
+              ADD NEW USER
             </Button>
           
           </div>
