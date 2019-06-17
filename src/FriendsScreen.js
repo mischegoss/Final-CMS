@@ -48,7 +48,7 @@ export default class FriendsScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
-    const dataSheet_sheet2 = this.props.dataSheets['sheet2'];
+    //const dataSheet_sheet2 = this.props.dataSheets['sheet2'];
     const style_elBackground = {
         width: '100%',
         height: '100%',

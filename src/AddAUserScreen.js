@@ -208,6 +208,7 @@ export default class AddAUserScreen extends Component {
           </div>
           
           <div className='elUser_name' style={style_elUser_name_outer}>
+          
             <input className='baseFont' style={style_elUser_name} type="text" placeholder={this.props.locStrings.addreview_reviewtextcopy_367397} onChange={this.textInputChanged_user_name} value={value_user_name !== undefined ? value_user_name : ''}  />
           
           </div>

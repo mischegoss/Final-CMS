@@ -22,12 +22,11 @@ export default class App extends Component {
 
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
-    this.dataSlots['ds_selectedRestaurantId'] = "4r2BhNHW8guC9SaDbzoG";
+    //this.dataSlots['ds_selectedRestaurantId'] = "4r2BhNHW8guC9SaDbzoG";
     this.dataSlots['ds_numberOfRestaurants'] = "10";
     this.dataSlots['ds_SlotUserID'] = "";
     this.dataSlots['ds_SlotUserName'] = "";
     this.dataSlots['ds_SlotUserEmail'] = "";
-    this.dataSlots['ds_selectedRestaurantName'] = "";
     this.dataSlots['ds_SlotUserPhone'] = "";
     this.dataSlots['ds_Slotnew_user'] = "";
 
@@ -62,7 +61,7 @@ export default class App extends Component {
     this.screenHistory = [ {...this.state} ];
 
   }
-
+// Formats for different size phones
   windowDidResize = () => {
     let w = window.innerWidth;
     let formatId;
@@ -92,10 +91,11 @@ export default class App extends Component {
     return this.state.loading;
   }
 
+  // Screen History
   goToScreen = (screenId, props) => {
-    // This method is the default implementation and could be customized by a navigation plugin.
+   
 
-    let screenIdx = -1;  // Check if the screen is already in the history stack, and pop back if so
+    let screenIdx = -1;  
     for (let i = 0; i < this.screenHistory.length; i++) {
       if (this.screenHistory[i].currentScreen === screenId) {
         screenIdx = i;
@@ -116,8 +116,9 @@ export default class App extends Component {
     window.scrollTo(0, 0);
   }
 
+  //Go Back Logic 
   goBack = () => {
-    // This method is the default implementation and could be customized by a navigation plugin.
+   
     if (this.screenHistory.length < 2)
       return;
 
@@ -128,12 +129,11 @@ export default class App extends Component {
   }
 
   getDataSheet = (sheetId) => {
-    // This method is the default implementation and could be customized by a state management plugin.
+    
     return this.dataSheets[sheetId];
   }
 
   addToDataSheet = (sheetId, newRow, actionId) => {
-    // This method is the default implementation and could be customized by a state management plugin.
     let sheet = this.dataSheets[sheetId];
     if (sheet && newRow) {
       sheet.addItem(newRow, this['serviceOptions_'+sheetId] || {});
@@ -142,7 +142,6 @@ export default class App extends Component {
   }
 
   updateInDataSheet = (sheetId, row, actionId) => {
-    // This method is the default implementation and could be customized by a state management plugin.
     let sheet = this.dataSheets[sheetId];
     if (sheet && row) {
       sheet.replaceItemByKey(row.key, row, this['serviceOptions_'+sheetId] || {});
@@ -151,7 +150,6 @@ export default class App extends Component {
         let screenProps = {...this.state.currentScreenProps};
         screenProps.dataSheetRow = row;
 
-        // Also update any props that were carried into a detail view
         for (let prop in screenProps) {
           if (row[prop] !== undefined) {
             screenProps[prop] = row[prop];
@@ -173,7 +171,7 @@ export default class App extends Component {
   }
 
   updateDataSlot = (slotId, value, actionId) => {
-    // This method is the default implementation and could be customized by a state management plugin.
+   
     this.dataSlots[slotId] = value;
     if (slotId === 'ds_activeLang') {
       this.locStrings.setLanguage(value);
@@ -183,7 +181,7 @@ export default class App extends Component {
       let usedSlots = [];
       let servicePath = this.dataSheets['sheet2'].expandSlotTemplateString("Textees", this.dataSlots, usedSlots);
       if (usedSlots.includes(slotId)) {
-        // if data sheet's content depends on this slot, reload it now
+        
         this.serviceOptions_sheet2.servicePath = servicePath;
         this.loadData_firebase1(this.dataSheets['sheet2'], this.serviceOptions_sheet2, true);
       }
@@ -192,7 +190,7 @@ export default class App extends Component {
   }
 
   dataSheetDidUpdate = (dataSheet) => {
-    // This method is the default implementation and could be customized by a state management plugin.
+   
     this.setState({});
   }
 
@@ -205,20 +203,18 @@ export default class App extends Component {
     }
     this.locStrings.setLanguage(this.dataSlots['ds_activeLang']);
   } 
-
+//Firebase Logic
   loadData_firebase1 = (dataSheet, options, firstLoad) => {
-    // This method was written by data plugin 'Firebase (Cloud Firestore)'.
+  
    this.setState({loading: true});
     
-    // clear any placeholder data before load
     if (firstLoad) {
       dataSheet.items = [];
     }
     
     const fetchComplete = (err) => {
       if (err) {
-        // This error handling comes from React Studio
-        // and currently doesn't do anything useful.
+
         console.error('** Web service load failed: ', err);
       } else {
       }
@@ -264,24 +260,6 @@ export default class App extends Component {
         fetchComplete(err, options);
       });  
     
-    
-     /*
-    dbLoadingPromise.get().then((querySnapshot) => {
-        let jsonArr = [];
-    
-        querySnapshot.forEach((doc) => {
-          const data = { ...doc.data(), key: doc.id };
-          jsonArr.push(data);
-        });
-            
-        dataSheet.loadFromJson(jsonArr);
-        fetchComplete(null, options);
-      },
-      (err) => {
-        fetchComplete(err, options);
-      });  
-      */
-    
   }
 
   render() {
@@ -307,7 +285,7 @@ export default class App extends Component {
         'ds_SlotUserPhone': this.dataSlots['ds_SlotUserPhone'],
         'ds_Slotnew_user': this.dataSlots['ds_Slotnew_user'],
       };
-      // A data sheet row was specified as the data source for this screen, so carry those props + 'dataSheetRow'.
+     
       const dataSheetRow_FriendsScreen = this.dataSheets['sheet2'].items[0];
       const screenData_FriendsScreen = {
         ...dataSheetRow_FriendsScreen,
