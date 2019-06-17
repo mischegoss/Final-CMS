@@ -22,7 +22,7 @@ export default class App extends Component {
 
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
-    //this.dataSlots['ds_selectedRestaurantId'] = "4r2BhNHW8guC9SaDbzoG";
+  
     this.dataSlots['ds_numberOfRestaurants'] = "10";
     this.dataSlots['ds_SlotUserID'] = "";
     this.dataSlots['ds_SlotUserName'] = "";
@@ -275,13 +275,13 @@ export default class App extends Component {
           screenFormatId: this.state.screenFormatId
         },
         'ds_activeLang': this.dataSlots['ds_activeLang'],
-        'ds_selectedRestaurantId': this.dataSlots['ds_selectedRestaurantId'],
+        
         'ds_numberOfRestaurants': this.dataSlots['ds_numberOfRestaurants'],
         'ds_SlotUserID': this.dataSlots['ds_SlotUserID'],
         'ds_SlotUserName': this.dataSlots['ds_SlotUserName'],
         'ds_SlotUserEmail': this.dataSlots['ds_SlotUserEmail'],
         'ds_SlotUserPhoto': this.dataSlots['ds_SlotUserPhoto'],
-        'ds_selectedRestaurantName': this.dataSlots['ds_selectedRestaurantName'],
+       
         'ds_SlotUserPhone': this.dataSlots['ds_SlotUserPhone'],
         'ds_Slotnew_user': this.dataSlots['ds_Slotnew_user'],
       };
