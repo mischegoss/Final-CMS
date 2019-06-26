@@ -28,6 +28,12 @@ export default class FriendsScreen extends Component {
     this.props.appActions.goToScreen('addauser', { transitionId: 'fadeIn' });
   
   }
+
+  onClick_elText3 = (ev) => {
+    // Go to outsideapp
+    window.open('https://finalfordeploy.herokuapp.com/', '_blank');
+  
+  }
   
   
   pickerValueChanged_pickerNumberOfRows = (event) => {
@@ -129,7 +135,11 @@ export default class FriendsScreen extends Component {
           
         </div>
         <Appbar className="navBar">
-          <div className="title">Friends</div></Appbar>
+          <div className="title">Friends</div>
+          <button className="mui--appbar-height" onClick={this.onClick_elText3}>Go to Texting Page</button>
+          </Appbar>
+
+          
         
         <div className="screenFgContainer">
           <div className="foreground">
@@ -148,6 +158,7 @@ export default class FriendsScreen extends Component {
                 return <Option key={item.key} value={colValue} label={labelColValue} />
               })}
             </Select>
+           
           </div>
         </div>
       </div>

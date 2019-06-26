@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mischegoss/Final-CMS/precache-manifest.43000def82438b1fae4c4c11c8e8134b.js"
+  "/Final-CMS/precache-manifest.0eca56be3606127c9e721ddaef4abbbf.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/mischegoss/Final-CMS/index.html", {
+workbox.routing.registerNavigationRoute("/Final-CMS/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

@@ -26,7 +26,7 @@ export default class LoginMainScreen extends Component {
 
   onClick_elText2 = (ev) => {
     // Go to screen 'Friends'
-    this.props.appActions.goToScreen('friends', { transitionId: 'fadeIn' });
+    window.open('https://finalfordeploy.herokuapp.com/', '_blank');
   
   }
   
@@ -78,6 +78,8 @@ export default class LoginMainScreen extends Component {
         cursor: 'pointer',
         pointerEvents: 'auto',
      };
+
+    const s1 = {verticalAlign: 'middle', padding: '5px'};
     
     return (
       <div className="AppScreen LoginMainScreen" style={baseStyle}>
@@ -92,7 +94,7 @@ export default class LoginMainScreen extends Component {
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='elText'>
             <div className='font-helveticaBold' style={style_elText}>
-              <div><div dangerouslySetInnerHTML={{__html: this.props.locStrings.loginmain_text_758871.replace(/\n/g, '<br>')}}></div></div>
+              <div>ALTETALKER</div>
             </div>
           
           </div>
@@ -106,14 +108,14 @@ export default class LoginMainScreen extends Component {
           
           <div className='elText3'>
             <div className='font-helveticaBold' style={style_elText3}>
-              <div>{this.props.locStrings.loginmain_text3_985220}</div>
+              <div>This is the page to add or delete users</div>
             </div>
           
           </div>
           
           <div className='elText2' style={style_elText2_outer}>
             <div className='baseFont' style={style_elText2} onClick={this.onClick_elText2} >
-              <div>{this.props.locStrings.loginmain_text2_130360}</div>
+              <div>Go to Main Page (Where You Can Text)</div>
             </div>
           
           </div>
