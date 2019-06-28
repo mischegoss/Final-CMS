@@ -3,6 +3,7 @@ import LocalizedStrings from 'react-localization';
 import './App.css';
 import AddAUserScreen from './AddAUserScreen.js';
 import FriendsScreen from './FriendsScreen.js';
+import Logout from './logout.js'
 import LoginMainScreen from './LoginMainScreen.js';
 import DataSheet_sheet2 from './DataSheet_sheet2.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
@@ -300,6 +301,8 @@ export default class App extends Component {
           return (<FriendsScreen {...screenProps} {...screenData_FriendsScreen} />)
         case 'loginmain':
           return (<LoginMainScreen {...screenProps} />)
+        case 'logout':
+          return (<Logout {...screenProps}/>)
       }
     }
 

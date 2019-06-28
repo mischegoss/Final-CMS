@@ -1,29 +1,14 @@
+
 import React, { Component } from 'react';
 import './App.css';
-import img_elN00021restaurant from './images/LoginMainScreen_elN00021restaurant_883381.jpg';
-import FirebaseLogin from './FirebaseLogin';
-import firebase from 'firebase';
+import Button from 'muicss/lib/react/button';
 
 
 
-export default class LoginMainScreen extends Component {
 
-  // Properties used by this component:
-  // appActions, deviceInfo
+export default class Logout extends Component {
 
-  componentDidMount() {
-    // Check if Firebase login has been completed.
-    setTimeout(() => {
-      if (firebase.auth().currentUser) {
-        if (this._elFirebaseLogin)
-          this._elFirebaseLogin.saveCurrentUserDataInApp();
-        
-        this.props.appActions.goToScreen('friends');
-        
-      }
-    }, 100);
-  }
-
+  
   onClick_elText2 = (ev) => {
     // Go to screen 'Friends'
     window.open('https://finalfordeploy.herokuapp.com/', '_blank');
@@ -96,28 +81,16 @@ export default class LoginMainScreen extends Component {
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='elText'>
             <div className='font-helveticaBold' style={style_elText}>
-              <div>ALTETALKER</div>
+              <div>LOGGED OUT</div>
             </div>
           
           </div>
           
-          <div className='elFirebaseLogin' style={style_elFirebaseLogin_outer}>
-            <div className=''>
-              <FirebaseLogin ref={(el)=> this._elFirebaseLogin = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
-            </div>
-          
-          </div>
-          
-          <div className='elText3'>
-            <div className='font-helveticaBold' style={style_elText3}>
-              <div>This is the page to add or delete users</div>
-            </div>
-          
-          </div>
+
           
           <div className='elText2' style={style_elText2_outer}>
             <div className='font-helveticaBold' style={style_elText2} onClick={this.onClick_elText2} >
-              <div>Go to Main Page (Where You Can Text)</div>
+              <Button>Go to Main Page (Where You Can Text)</Button>
             </div>
 
             
@@ -131,3 +104,4 @@ export default class LoginMainScreen extends Component {
   
 
 }
+

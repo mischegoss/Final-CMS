@@ -30,12 +30,16 @@ export default class FriendsScreen extends Component {
   }
 
   onClick_elText3 = (ev) => {
-    // Go to outsideapp
+    // Go to screen 'Main Page'
     window.open('https://finalfordeploy.herokuapp.com/', '_blank');
   
   }
-  
-  
+
+  onClick_logout = (ev) => {
+    this.props.appActions.goToScreen('logout', { transitionId: 'fadeIn' });
+  }
+
+ 
   pickerValueChanged_pickerNumberOfRows = (event) => {
     this.setState({pickerNumberOfRows: event.target.value});
     this.props.appActions.updateDataSlot("ds_numberOfRestaurants", event.target.value);
@@ -62,6 +66,16 @@ export default class FriendsScreen extends Component {
     const style_elBackground_outer = {
         backgroundColor: '#f6f6f6',
      };
+
+     const buttonforMainPage =  {
+       width: '60vw',
+       backgroundColor: 'black',
+       color: 'white',
+       textAlign: 'center',
+       marginTop: '20px',
+       
+       
+     }
     const style_elList = {
         height: 'auto',  // This element is in scroll flow
      };
@@ -98,7 +112,13 @@ export default class FriendsScreen extends Component {
     // Source datasheet and selected data column for picker element 'pickerNumberOfRows'
     const dataSource_pickerNumberOfRows = this.props.appActions.getDataSheet('pickerNumberOfRows');
     const valueColumnName_pickerNumberOfRows = 'numberOfRows';
+
+    const logoutButton = {
+      marginRight: '20px',
+      marginTop: '10px'
+    }
     
+  
     
     return (
       <div className="AppScreen FriendsScreen" style={baseStyle}>
@@ -135,11 +155,16 @@ export default class FriendsScreen extends Component {
           
         </div>
         <Appbar className="navBar">
+       
           <div className="title">Friends</div>
-          <button className="mui--appbar-height" onClick={this.onClick_elText3}>Go to Texting Page</button>
+          <Button style={logoutButton} onClick={this.onClick_logout}>LOGOUT</Button>
+         
+          
           </Appbar>
 
-          
+          <Button style={buttonforMainPage} onClick={this.onClick_elText3} >
+              <div>Go to User Page)</div>
+            </Button>
         
         <div className="screenFgContainer">
           <div className="foreground">

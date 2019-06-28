@@ -223,7 +223,7 @@ export default class AddAUserScreen extends Component {
           <div className="flowRow flowRow_AddAUserScreen_elSendButton_596452">
           <div className='elSendButton' style={style_elSendButton_outer}>
             <Button className='actionFont' style={style_elSendButton}  color="accent" onClick={this.onClick_elSendButton} >
-              ADD ME 
+              Add Me 
             </Button>
           
           </div>
@@ -253,7 +253,7 @@ export default class AddAUserScreen extends Component {
           
           <div className='elButton' style={style_elButton_outer}>
             <Button className='actionFont' style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
-              ADD NEW USER
+              Add a New User
             </Button>
           
           </div>
