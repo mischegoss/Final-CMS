@@ -30,7 +30,9 @@ export default class LoginMainScreen extends Component {
   
   }
 
- 
+ skipLogin = (ev)  => {
+  this.props.appActions.goToScreen('friends');
+ }
   
   
   render() {
@@ -120,12 +122,21 @@ export default class LoginMainScreen extends Component {
               <div>Go to Main Page (Where You Can Text)</div>
             </div>
 
-            
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <button onClick={this.skipLogin}>Enter w/o Login</button> 
           
           </div>
           
         </div>
-      </div>
+
+       
+     
+
+       
+       
+        </div>
+     
+      
     )
   }
   
